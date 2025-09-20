@@ -1,0 +1,78 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { smoothScrollTo } from "@/lib/utils";
+
+export default function HeroSection() {
+  const handleScrollToProjects = () => {
+    smoothScrollTo("projects");
+  };
+
+  return (
+    <section className="min-h-screen flex items-center justify-center relative px-4">
+      <div className="max-w-6xl mx-auto text-center">
+        {/* Profile Picture */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="mb-12"
+        >
+          <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden shadow-glow-lg hover:shadow-glow-xl transition-all duration-500 border-glow">
+            <div className="w-full h-full bg-gradient-to-br from-accent-500 to-accent-700 flex items-center justify-center text-4xl sm:text-5xl md:text-6xl font-bold text-white text-glow">
+              TS
+            </div>
+          </div>
+        </motion.div>
+
+        {/* Text Content */}
+        <div className="space-y-6">
+          {/* First Line - Typewriter Effect */}
+          <motion.h1
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.6 }}
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white tracking-tight"
+          >
+            <span className="inline-block overflow-hidden whitespace-nowrap border-r-2 border-accent-400 animate-[typewriter_2s_steps(19)_1s_forwards,blink_1s_infinite]">
+              Hey, I'm Taha.
+            </span>
+          </motion.h1>
+
+          {/* Second Line - Slide In */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 3.2, duration: 0.6, ease: "easeOut" }}
+            className="text-xl md:text-2xl text-gray-300 font-light"
+          >
+            Computer Science & Mathematics | Builder of impactful software.
+          </motion.p>
+
+          {/* Third Line - Fade In */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 3.8, duration: 0.6, ease: "easeOut" }}
+            className="text-lg md:text-xl text-gray-400 font-light"
+          >
+            Turning bold ideas into reality.
+          </motion.p>
+        </div>
+
+        {/* Call to Action Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 4.4, duration: 0.6, ease: "easeOut" }}
+          className="mt-16"
+        >
+          <Button onClick={handleScrollToProjects} size="xl">
+            See My Work
+          </Button>
+        </motion.div>
+      </div>
+    </section>
+  );
+}
