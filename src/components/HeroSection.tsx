@@ -16,7 +16,7 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeOut" }}
+          transition={{ duration: 0.7, ease: "easeOut" }}
           className="mb-12"
         >
           <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden shadow-glow-lg hover:shadow-glow-xl transition-all duration-500 border-glow">
@@ -32,10 +32,10 @@ export default function HeroSection() {
           <motion.h1
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 0.6 }}
+            transition={{ delay: 0.3, duration: 0.6, ease: "easeOut" }}
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white tracking-tight"
           >
-            <span className="inline-block overflow-hidden whitespace-nowrap border-r-2 border-accent-400 animate-[typewriter_2s_steps(19)_1s_forwards,blink_1s_infinite]">
+            <span className="inline-block overflow-hidden whitespace-nowrap border-r-2 border-accent-400 animate-[typewriter_2s_steps(19)_0.8s_forwards,blink_1s_infinite]">
               Hey, I'm Taha.
             </span>
           </motion.h1>
@@ -44,7 +44,7 @@ export default function HeroSection() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 3.2, duration: 0.6, ease: "easeOut" }}
+            transition={{ delay: 2.5, duration: 0.7, ease: "easeOut" }}
             className="text-xl md:text-2xl text-gray-300 font-light"
           >
             Computer Science & Mathematics | Builder of impactful software.
@@ -54,7 +54,7 @@ export default function HeroSection() {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 3.8, duration: 0.6, ease: "easeOut" }}
+            transition={{ delay: 3.0, duration: 0.7, ease: "easeOut" }}
             className="text-lg md:text-xl text-gray-400 font-light"
           >
             Turning bold ideas into reality.
@@ -65,7 +65,7 @@ export default function HeroSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 4.4, duration: 0.6, ease: "easeOut" }}
+          transition={{ delay: 3.5, duration: 0.7, ease: "easeOut" }}
           className="mt-16"
         >
           <Button onClick={handleScrollToProjects} size="xl">
