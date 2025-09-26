@@ -340,7 +340,7 @@ export default function ProjectsSection() {
                         }
                       >
                         <ExternalLink className="h-4 w-4" />
-                        Read More
+                        Read Blog
                       </Button>
                     )}
                     {selectedProject.Website && (
