@@ -9,7 +9,7 @@ export default function AboutSection() {
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+          transition={{ duration: 0.4, ease: "easeOut" }}
           viewport={{ once: true }}
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-8 text-center bg-gradient-to-r from-blue-400 to-purple-600 bg-clip-text text-transparent">
@@ -21,9 +21,9 @@ export default function AboutSection() {
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{
-                duration: 0.6,
-                ease: [0.25, 0.1, 0.25, 1],
-                delay: 0.2,
+                duration: 0.4,
+                ease: "easeOut",
+                delay: 0.1,
               }}
               viewport={{ once: true }}
               className="space-y-4"
@@ -46,7 +46,9 @@ export default function AboutSection() {
                   "React",
                   "Next.js",
                   "TypeScript",
-                  "Node.js",
+                  "Spring Boot",
+                  "Java",
+                  "PostgreSQL",
                   "Python",
                   "AWS",
                 ].map((skill) => (
@@ -64,9 +66,9 @@ export default function AboutSection() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               transition={{
-                duration: 0.6,
-                ease: [0.25, 0.1, 0.25, 1],
-                delay: 0.4,
+                duration: 0.4,
+                ease: "easeOut",
+                delay: 0.2,
               }}
               viewport={{ once: true }}
               className="flex justify-center"

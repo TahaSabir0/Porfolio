@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { smoothScrollTo } from "@/lib/utils";
+import Link from "next/link";
 
 const navItems = [
   { name: "About", href: "about" },
@@ -34,7 +35,7 @@ export default function Navigation() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+      transition={{ duration: 0.4, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled
           ? "bg-gray-900/90 backdrop-blur-md shadow-glow border-b border-accent-500/30"
@@ -56,24 +57,22 @@ export default function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navItems.map((item) => (
+            {navItems.slice(0, -1).map((item) => (
               <motion.button
                 key={item.name}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => handleNavClick(item.href)}
-                className="text-gray-300 hover:text-accent-300 font-medium transition-colors duration-200"
+                className="font-medium transition-colors duration-200 text-gray-300 hover:text-accent-300"
               >
                 {item.name}
               </motion.button>
             ))}
-            <Button
-              onClick={() => handleNavClick("contact")}
-              size="sm"
-              className="ml-4"
-            >
-              Let's Talk
-            </Button>
+            <Link href="/contact">
+              <Button size="sm" className="ml-4">
+                Contact
+              </Button>
+            </Link>
           </div>
 
           {/* Mobile Menu Button */}
@@ -110,12 +109,9 @@ export default function Navigation() {
                 {item.name}
               </button>
             ))}
-            <Button
-              onClick={() => handleNavClick("contact")}
-              className="w-full mt-4"
-            >
-              Let's Talk
-            </Button>
+            <Link href="/contact" className="w-full mt-4">
+              <Button className="w-full">Let's Talk</Button>
+            </Link>
           </div>
         </motion.div>
       </div>
