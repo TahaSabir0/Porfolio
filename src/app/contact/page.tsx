@@ -7,9 +7,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import {
-  ArrowLeft,
   Send,
-  Mail,
   AlertCircle,
   CheckCircle,
   X,
@@ -96,10 +94,10 @@ export default function ContactPage() {
           <div className="flex items-center justify-between p-6 border-b border-gray-700">
             <div>
               <h1 className="text-3xl font-bold text-white text-glow">
-                Let's Connect
+                Let&apos;s Connect
               </h1>
               <p className="text-gray-300 mt-2">
-                Have a project in mind or just want to chat? I'd love to hear
+                Have a project in mind or just want to chat? I&apos;d love to hear
                 from you.
               </p>
             </div>
@@ -123,7 +121,7 @@ export default function ContactPage() {
                   Message Sent!
                 </h3>
                 <p className="text-gray-300">
-                  Thanks for reaching out. I'll get back to you soon!
+                  Thanks for reaching out. I&apos;ll get back to you soon!
                 </p>
               </div>
             ) : (

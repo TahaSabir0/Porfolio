@@ -39,14 +39,14 @@ export default function AboutSection() {
               className="space-y-6"
             >
               <p className="text-gray-300 leading-relaxed text-lg">
-                I'm a passionate full-stack developer with a love for creating
+                I&apos;m a passionate full-stack developer with a love for creating
                 innovative digital experiences. With expertise in modern web
                 technologies, I enjoy turning complex problems into simple,
                 beautiful, and intuitive solutions.
               </p>
 
               <p className="text-gray-300 leading-relaxed text-lg">
-                When I'm not coding, you can find me exploring new technologies,
+                When I&apos;m not coding, you can find me exploring new technologies,
                 contributing to open-source projects, or sharing knowledge with
                 the developer community.
               </p>

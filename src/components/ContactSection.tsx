@@ -35,10 +35,6 @@ export default function ContactSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
-  const handleEmailClick = () => {
-    window.location.href = "mailto:tahasabir2023@gmail.com";
-  };
-
   const handleLinkedInClick = () => {
     window.open("https://www.linkedin.com/in/tahasabir/", "_blank");
   };
@@ -109,10 +105,10 @@ export default function ContactSection() {
         >
           <div>
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 tracking-tight text-glow">
-              Let's Connect
+              Let&apos;s Connect
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              Interested in working together? Let's build something impactful.
+              Interested in working together? Let&apos;s build something impactful.
             </p>
           </div>
 
@@ -196,10 +192,10 @@ export default function ContactSection() {
             <div className="flex items-center justify-between p-6 border-b border-gray-700">
               <div>
                 <h2 className="text-3xl font-bold text-white text-glow">
-                  Let's Connect
+                  Let&apos;s Connect
                 </h2>
                 <p className="text-gray-300 mt-2">
-                  Have a project in mind or just want to chat? I'd love to hear
+                  Have a project in mind or just want to chat? I&apos;d love to hear
                   from you.
                 </p>
               </div>
@@ -222,7 +218,7 @@ export default function ContactSection() {
                     Message Sent!
                   </h3>
                   <p className="text-gray-300">
-                    Thanks for reaching out. I'll get back to you soon!
+                    Thanks for reaching out. I&apos;ll get back to you soon!
                   </p>
                 </div>
               ) : (

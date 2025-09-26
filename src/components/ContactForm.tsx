@@ -118,7 +118,7 @@ export default function ContactForm({ isOpen, onClose }: ContactFormProps) {
               Message Sent!
             </h3>
             <p className="text-gray-300">
-              Thanks for reaching out! I'll get back to you soon.
+              Thanks for reaching out! I&apos;ll get back to you soon.
             </p>
           </motion.div>
         ) : (

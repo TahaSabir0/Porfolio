@@ -38,7 +38,7 @@ export default function HeroSection() {
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white tracking-tight"
           >
             <span className="inline-block overflow-hidden whitespace-nowrap border-r-2 border-accent-400 animate-[typewriter_2s_steps(19)_0.8s_forwards,blink_1s_infinite]">
-              Hey, I'm Taha.
+              Hey, I&apos;m Taha.
             </span>
           </motion.h1>
 

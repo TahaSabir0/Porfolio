@@ -1,6 +1,6 @@
 "use client";
 
-import { motion, AnimatePresence, useInView } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 
 interface ImageSlideshowProps {

@@ -5,7 +5,6 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { smoothScrollTo } from "@/lib/utils";
-import Link from "next/link";
 
 const navItems = [
   { name: "About", href: "about" },
@@ -115,7 +114,7 @@ export default function Navigation() {
               className="w-full mt-4"
               onClick={() => handleNavClick("contact")}
             >
-              Let's Talk
+              Let&apos;s Talk
             </Button>
           </div>
         </motion.div>
