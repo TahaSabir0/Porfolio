@@ -13,16 +13,7 @@ export default function Footer() {
           viewport={{ once: true }}
           className="space-y-4"
         >
-          <p className="text-gray-400 text-sm">
-            © 2025 Taha Sabir | Built with React & Tailwind
-          </p>
-          <div className="flex justify-center space-x-6 text-gray-500 text-xs">
-            <span>Designed with ❤️</span>
-            <span>•</span>
-            <span>Optimized for all devices</span>
-            <span>•</span>
-            <span>Accessible & inclusive</span>
-          </div>
+          <p className="text-gray-400 text-sm">© 2025 Taha Sabir</p>
         </motion.div>
       </div>
     </footer>

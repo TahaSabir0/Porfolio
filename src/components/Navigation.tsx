@@ -68,11 +68,13 @@ export default function Navigation() {
                 {item.name}
               </motion.button>
             ))}
-            <Link href="/contact">
-              <Button size="sm" className="ml-4">
-                Contact
-              </Button>
-            </Link>
+            <Button
+              size="sm"
+              className="ml-4"
+              onClick={() => handleNavClick("contact")}
+            >
+              Contact
+            </Button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -109,9 +111,12 @@ export default function Navigation() {
                 {item.name}
               </button>
             ))}
-            <Link href="/contact" className="w-full mt-4">
-              <Button className="w-full">Let's Talk</Button>
-            </Link>
+            <Button
+              className="w-full mt-4"
+              onClick={() => handleNavClick("contact")}
+            >
+              Let's Talk
+            </Button>
           </div>
         </motion.div>
       </div>

@@ -40,11 +40,11 @@ export default function ContactSection() {
   };
 
   const handleLinkedInClick = () => {
-    window.open("https://linkedin.com/in/tahasabir", "_blank");
+    window.open("https://www.linkedin.com/in/tahasabir/", "_blank");
   };
 
   const handleGitHubClick = () => {
-    window.open("https://github.com/tahasabir", "_blank");
+    window.open("https://github.com/TahaSabir0", "_blank");
   };
 
   const handleInputChange = (

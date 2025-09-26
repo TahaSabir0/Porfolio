@@ -4,6 +4,12 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
+interface MediaItem {
+  src: string;
+  type: "image" | "youtube";
+  alt?: string;
+}
+
 interface ProjectImageSliderProps {
   images: string[];
   projectTitle: string;
@@ -15,23 +21,48 @@ export default function ProjectImageSlider({
 }: ProjectImageSliderProps) {
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  const goToPrevious = () => {
+  // Convert images array to media items, detecting YouTube videos
+  const mediaItems: MediaItem[] = images.map((src) => {
+    if (src.includes("youtube.com/watch?v=") || src.includes("youtu.be/")) {
+      // Extract YouTube video ID
+      const videoId = src.includes("youtube.com/watch?v=")
+        ? src.split("v=")[1]?.split("&")[0]
+        : src.split("youtu.be/")[1]?.split("?")[0];
+
+      return {
+        src: videoId || src,
+        type: "youtube" as const,
+        alt: `${projectTitle} - Video`,
+      };
+    }
+
+    return {
+      src,
+      type: "image" as const,
+      alt: `${projectTitle} - Image`,
+    };
+  });
+
+  const goToPrevious = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setCurrentIndex((prevIndex) =>
-      prevIndex === 0 ? images.length - 1 : prevIndex - 1
+      prevIndex === 0 ? mediaItems.length - 1 : prevIndex - 1
     );
   };
 
-  const goToNext = () => {
+  const goToNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
     setCurrentIndex((prevIndex) =>
-      prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      prevIndex === mediaItems.length - 1 ? 0 : prevIndex + 1
     );
   };
 
-  const goToSlide = (index: number) => {
+  const goToSlide = (index: number, e: React.MouseEvent) => {
+    e.stopPropagation();
     setCurrentIndex(index);
   };
 
-  if (!images || images.length === 0) {
+  if (!mediaItems || mediaItems.length === 0) {
     return (
       <div className="aspect-video bg-gradient-to-br from-accent-500 to-accent-700 relative overflow-hidden flex-shrink-0">
         <div className="w-full h-full flex items-center justify-center text-4xl font-bold text-white text-glow">
@@ -41,14 +72,26 @@ export default function ProjectImageSlider({
     );
   }
 
-  if (images.length === 1) {
+  if (mediaItems.length === 1) {
+    const media = mediaItems[0];
     return (
       <div className="aspect-video bg-gray-800 relative overflow-hidden flex-shrink-0 rounded-t-2xl">
-        <img
-          src={images[0]}
-          alt={`${projectTitle} - Image 1`}
-          className="w-full h-full object-cover"
-        />
+        {media.type === "image" ? (
+          <img
+            src={media.src}
+            alt={media.alt}
+            className="w-full h-full object-cover"
+          />
+        ) : (
+          <iframe
+            src={`https://www.youtube.com/embed/${media.src}?rel=0&modestbranding=1&showinfo=0`}
+            title={media.alt}
+            className="w-full h-full"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        )}
       </div>
     );
   }
@@ -61,14 +104,25 @@ export default function ProjectImageSlider({
         animate={{ x: `-${currentIndex * 100}%` }}
         transition={{ duration: 0.15, ease: "easeInOut" }}
       >
-        {images.map((image, index) => (
+        {mediaItems.map((media, index) => (
           <div key={index} className="w-full h-full flex-shrink-0">
-            <img
-              src={image}
-              alt={`${projectTitle} - Image ${index + 1}`}
-              className="w-full h-full object-cover"
-              loading="eager"
-            />
+            {media.type === "image" ? (
+              <img
+                src={media.src}
+                alt={media.alt}
+                className="w-full h-full object-cover"
+                loading="eager"
+              />
+            ) : (
+              <iframe
+                src={`https://www.youtube.com/embed/${media.src}?rel=0&modestbranding=1&showinfo=0`}
+                title={media.alt}
+                className="w-full h-full"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
+            )}
           </div>
         ))}
       </motion.div>
@@ -92,10 +146,10 @@ export default function ProjectImageSlider({
 
       {/* Dot Indicators */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2">
-        {images.map((_, index) => (
+        {mediaItems.map((_, index) => (
           <button
             key={index}
-            onClick={() => goToSlide(index)}
+            onClick={(e) => goToSlide(index, e)}
             className={`w-2 h-2 rounded-full transition-all duration-200 ${
               index === currentIndex
                 ? "bg-accent-400 scale-125"

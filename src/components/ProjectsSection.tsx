@@ -24,12 +24,14 @@ interface Project {
   github?: string;
   demo?: string;
   blog?: string;
+  Website?: string;
+  DevPost?: string;
 }
 
 const projects: Project[] = [
   {
     id: "wahaj-ai",
-    title: "Wahaj.ai (Full Stack SWE Intern)",
+    title: "Wahaj.ai",
     description:
       "As a Full Stack Software Engineering Intern at Wahaj.ai, I contributed to building enterprise-grade AI solutions. I worked extensively with React.js for frontend development, Spring Boot for robust backend services, and PostgreSQL for database management. My role involved implementing AWS cloud infrastructure, containerizing applications with Docker, and setting up CI/CD pipelines using GitHub Actions. A key focus was SQL query tuning to optimize database performance and ensure scalable data operations. This experience provided me with hands-on exposure to production-level software development and modern DevOps practices.",
     image: "/api/placeholder/600/400",
@@ -49,8 +51,7 @@ const projects: Project[] = [
       "GitHub Actions",
       "SQL Query Tuning",
     ],
-    github: "#",
-    demo: "#",
+    Website: "https://www.brainlyne.ai/",
   },
   {
     id: "swiftapply",
@@ -60,6 +61,7 @@ const projects: Project[] = [
     image: "/api/placeholder/600/400",
     images: [
       "/projects/Swiftapply/image-1.png",
+      "https://youtu.be/3uyix55LC88",
       "/projects/Swiftapply/image-2.png",
       "/projects/Swiftapply/image-3.png",
       "/projects/Swiftapply/image-4.png",
@@ -86,6 +88,7 @@ const projects: Project[] = [
     image: "/api/placeholder/600/400",
     images: [
       "/projects/Automatic-guitar tuner/image-1.png",
+      "https://www.youtube.com/watch?v=YejNIvxSDlA",
       "/projects/Automatic-guitar tuner/image-2.png",
       "/projects/Automatic-guitar tuner/image-3.png",
       "/projects/Automatic-guitar tuner/image-4.png",
@@ -124,8 +127,7 @@ const projects: Project[] = [
       "Grayscale Sensors",
       "Vilib Camera APIs",
     ],
-    github: "#",
-    demo: "#",
+    blog: "https://cs.gettysburg.edu/~tneller/archive/cs371/picarx/25sp/1/",
   },
   {
     id: "york-note",
@@ -150,9 +152,8 @@ const projects: Project[] = [
       "Real-time Database Sync",
       "Secure User Authentication",
     ],
-    github: "#",
-    demo: "#",
-    blog: "#",
+    github: "https://github.com/TahaSabir0/hackathon-final",
+    DevPost: "https://devpost.com/software/york-note",
   },
 ];
 
@@ -196,7 +197,7 @@ export default function ProjectsSection() {
                 className="group cursor-pointer"
                 onClick={() => setSelectedProject(project)}
               >
-                <div className="bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-glow hover:shadow-glow-lg transition-all duration-500 transform hover:-translate-y-2 border border-gray-700 hover:border-accent-400 h-[420px] flex flex-col">
+                <div className="bg-gray-800/80 backdrop-blur-sm rounded-2xl overflow-hidden shadow-glow hover:shadow-glow-lg transition-all duration-500 transform hover:-translate-y-2 border border-gray-700 hover:border-accent-400 min-h-[420px] flex flex-col">
                   {/* Project Image */}
                   {project.images && project.images.length > 0 ? (
                     <ProjectImageSlider
@@ -216,7 +217,7 @@ export default function ProjectsSection() {
                   )}
 
                   {/* Project Content */}
-                  <div className="p-5 flex flex-col h-full">
+                  <div className="p-5 flex flex-col flex-1">
                     <h3 className="text-xl font-bold text-white mb-3 group-hover:text-accent-300 transition-colors duration-300 text-glow">
                       {project.title}
                     </h3>
@@ -235,7 +236,7 @@ export default function ProjectsSection() {
                         </span>
                       )}
                     </div>
-                    <p className="text-gray-400 text-sm leading-relaxed">
+                    <p className="text-gray-400 text-sm leading-relaxed flex-1">
                       {project.description.substring(0, 100)}...
                     </p>
                   </div>
@@ -306,17 +307,26 @@ export default function ProjectsSection() {
                     Sources
                   </h4>
                   <div className="flex flex-wrap gap-4">
-                    {selectedProject.github && (
-                      <Button
-                        variant="outline"
-                        className="flex items-center gap-2"
-                      >
-                        <Github className="h-4 w-4" />
-                        View Code
-                      </Button>
-                    )}
+                    {selectedProject.github &&
+                      selectedProject.github !== "#" && (
+                        <Button
+                          variant="outline"
+                          className="flex items-center gap-2"
+                          onClick={() =>
+                            window.open(selectedProject.github, "_blank")
+                          }
+                        >
+                          <Github className="h-4 w-4" />
+                          View Code
+                        </Button>
+                      )}
                     {selectedProject.demo && (
-                      <Button className="flex items-center gap-2">
+                      <Button
+                        className="flex items-center gap-2"
+                        onClick={() =>
+                          window.open(selectedProject.demo, "_blank")
+                        }
+                      >
                         <Play className="h-4 w-4" />
                         Live Demo
                       </Button>
@@ -325,9 +335,36 @@ export default function ProjectsSection() {
                       <Button
                         variant="outline"
                         className="flex items-center gap-2"
+                        onClick={() =>
+                          window.open(selectedProject.blog, "_blank")
+                        }
                       >
                         <ExternalLink className="h-4 w-4" />
                         Read More
+                      </Button>
+                    )}
+                    {selectedProject.Website && (
+                      <Button
+                        variant="outline"
+                        className="flex items-center gap-2"
+                        onClick={() =>
+                          window.open(selectedProject.Website, "_blank")
+                        }
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        Visit Website
+                      </Button>
+                    )}
+                    {selectedProject.DevPost && (
+                      <Button
+                        variant="outline"
+                        className="flex items-center gap-2"
+                        onClick={() =>
+                          window.open(selectedProject.DevPost, "_blank")
+                        }
+                      >
+                        <ExternalLink className="h-4 w-4" />
+                        View DevPost
                       </Button>
                     )}
                   </div>

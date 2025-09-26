@@ -17,12 +17,14 @@ export default function HeroSection() {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="mb-12"
+          className="mb-8"
         >
-          <div className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 mx-auto rounded-full overflow-hidden shadow-glow-lg hover:shadow-glow-xl transition-all duration-500 border-glow">
-            <div className="w-full h-full bg-gradient-to-br from-accent-500 to-accent-700 flex items-center justify-center text-4xl sm:text-5xl md:text-6xl font-bold text-white text-glow">
-              TS
-            </div>
+          <div className="w-40 h-40 sm:w-48 sm:h-48 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-auto rounded-full overflow-hidden shadow-glow-xl hover:shadow-glow-2xl transition-all duration-500 border-glow border-2 border-accent-400/30">
+            <img
+              src="/project files/Screenshot 2025-03-07 012134.png"
+              alt="Taha Sabir"
+              className="w-full h-full object-cover"
+            />
           </div>
         </motion.div>
 
@@ -69,11 +71,18 @@ export default function HeroSection() {
           className="mt-16 flex flex-col sm:flex-row gap-4 justify-center items-center"
         >
           <Button
-            onClick={() => window.open("/resume.pdf", "_blank")}
+            onClick={() => {
+              const link = document.createElement("a");
+              link.href = "/project files/Taha_Sabir_CV.pdf";
+              link.download = "Taha_Sabir_CV.pdf";
+              document.body.appendChild(link);
+              link.click();
+              document.body.removeChild(link);
+            }}
             variant="outline"
             size="xl"
           >
-            Download Resume
+            Download CV
           </Button>
           <Button onClick={handleScrollToProjects} size="xl">
             See My Work
