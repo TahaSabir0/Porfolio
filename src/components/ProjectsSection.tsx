@@ -30,17 +30,17 @@ interface Project {
 
 const projects: Project[] = [
   {
-    id: "wahaj-ai",
-    title: "Wahaj.ai",
+    id: "brainlyne-ai",
+    title: "Brainlyne.ai",
     description:
-      "As a Full Stack Software Engineering Intern at Wahaj.ai, I contributed to building enterprise-grade AI solutions. I worked extensively with React.js for frontend development, Spring Boot for robust backend services, and PostgreSQL for database management. My role involved implementing AWS cloud infrastructure, containerizing applications with Docker, and setting up CI/CD pipelines using GitHub Actions. A key focus was SQL query tuning to optimize database performance and ensure scalable data operations. This experience provided me with hands-on exposure to production-level software development and modern DevOps practices.",
+      "As a Full Stack Software Engineering Intern at Brainlyne.ai, I contributed to building enterprise-grade AI solutions. I worked extensively with React.js for frontend development, Spring Boot for robust backend services, and PostgreSQL for database management. My role involved implementing AWS cloud infrastructure, containerizing applications with Docker, and setting up CI/CD pipelines using GitHub Actions. A key focus was SQL query tuning to optimize database performance and ensure scalable data operations. This experience provided me with hands-on exposure to production-level software development and modern DevOps practices.",
     image: "/api/placeholder/600/400",
     images: [
-      "/projects/Wahaj.ai/image-1.png",
-      "/projects/Wahaj.ai/image-2.png",
-      "/projects/Wahaj.ai/image-3.png",
-      "/projects/Wahaj.ai/image-4.png",
-      "/projects/Wahaj.ai/image-5.png",
+      "/projects/Brainlyne.ai/image-1.png",
+      "/projects/Brainlyne.ai/image-2.png",
+      "/projects/Brainlyne.ai/image-3.png",
+      "/projects/Brainlyne.ai/image-4.png",
+      "/projects/Brainlyne.ai/image-5.png",
     ],
     tech: [
       "React.js",
