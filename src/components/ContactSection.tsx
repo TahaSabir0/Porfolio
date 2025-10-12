@@ -108,7 +108,8 @@ export default function ContactSection() {
               Let&apos;s Connect
             </h2>
             <p className="text-xl text-gray-300 max-w-2xl mx-auto leading-relaxed">
-              Interested in working together? Let&apos;s build something impactful.
+              Interested in working together? Let&apos;s build something
+              impactful.
             </p>
           </div>
 
@@ -195,8 +196,8 @@ export default function ContactSection() {
                   Let&apos;s Connect
                 </h2>
                 <p className="text-gray-300 mt-2">
-                  Have a project in mind or just want to chat? I&apos;d love to hear
-                  from you.
+                  Have a project in mind or just want to chat? I&apos;d love to
+                  hear from you.
                 </p>
               </div>
               <Button

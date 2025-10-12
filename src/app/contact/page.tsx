@@ -6,12 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
-import {
-  Send,
-  AlertCircle,
-  CheckCircle,
-  X,
-} from "lucide-react";
+import { Send, AlertCircle, CheckCircle, X } from "lucide-react";
 import Link from "next/link";
 import emailjs from "@emailjs/browser";
 import { EMAILJS_CONFIG } from "@/lib/emailjs-config";
@@ -97,8 +92,8 @@ export default function ContactPage() {
                 Let&apos;s Connect
               </h1>
               <p className="text-gray-300 mt-2">
-                Have a project in mind or just want to chat? I&apos;d love to hear
-                from you.
+                Have a project in mind or just want to chat? I&apos;d love to
+                hear from you.
               </p>
             </div>
             <Link href="/">
