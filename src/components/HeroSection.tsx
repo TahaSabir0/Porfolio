@@ -73,8 +73,8 @@ export default function HeroSection() {
           <Button
             onClick={() => {
               const link = document.createElement("a");
-              link.href = "/project files/Taha_Sabir_CV.pdf";
-              link.download = "Taha_Sabir_CV.pdf";
+              link.href = "/project files/Taha_Sabir_Resume.pdf";
+              link.download = "Taha_Sabir_Resume.pdf";
               document.body.appendChild(link);
               link.click();
               document.body.removeChild(link);
